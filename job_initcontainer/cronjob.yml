@@ -1,0 +1,15 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+ name: abhay
+spec:
+ schedule: "* * * * *"
+ jobTemplate:
+   spec:
+     template:
+       spec:
+         containers:
+         - image: ubuntu
+           name: abhay
+           command: ["/bin/bash", "-c", "echo cricbuzz.com; sleep 5"]
+         restartPolicy: Never

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myvolhostpath
+spec:
+  containers:
+  - image: coolgourav147/nginx-custom
+    name: test-container
+    volumeMounts:
+            - mountPath: /data
+              name: testvolume
+  volumes:
+  - name: testvolume
+    hostPath:
+      path: /tmp/data
